@@ -10,28 +10,35 @@ const books = [
   {
     name: "Behind the beautiful forevers",
     photo: behindTheBeautifulForevers,
+    author: "Katherine Boo",
   },
   {
     name: "Homegoing",
-    photo: homegoing
+    photo: homegoing,
+    author: "Yaa Gyasi",
   },
   {
     name: "The City & the City",
     photo: theCityAndTheCity,
+    author: "China Miéville"
   },
   {
     name: "Rework",
     photo: rework,
+    author: "David Heinemeier Hansson and Jason Fried",
   }
 ]
 
-function BookPhoto({ photo, name }) {
+function BookPhoto({ photo, name, author }) {
   return (
     <div className="book">
       <div className="book-photo">
         <img src={photo} alt={name} />
       </div>
-      <p>{name}</p>
+      <div className="book-info">
+        <p className="book-title">{name}</p>
+        <p className="book-author">{author}</p>
+      </div>
     </div>
   )
 }
@@ -43,9 +50,9 @@ function App() {
         <p>Books - 2019</p>
       </header>
       <div className="books-container">
-        {books.map(({ name, photo }) => {
+        {books.map(({ name, photo, author }) => {
           return (
-            <BookPhoto key={name} photo={photo} name={name} />
+            <BookPhoto key={name} photo={photo} name={name} author={author} />
           );
         })}
       </div>
