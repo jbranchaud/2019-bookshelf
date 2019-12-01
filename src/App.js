@@ -25,10 +25,13 @@ const books = [
   }
 ]
 
-function BookPhoto({ photo, alt }) {
+function BookPhoto({ photo, name }) {
   return (
-    <div className="book-photo">
-      <img src={photo} alt={alt} />
+    <div className="book">
+      <div className="book-photo">
+        <img src={photo} alt={name} />
+      </div>
+      <p>{name}</p>
     </div>
   )
 }
@@ -42,7 +45,7 @@ function App() {
       <div className="books-container">
         {books.map(({ name, photo }) => {
           return (
-            <BookPhoto key={name} photo={photo} alt={name} />
+            <BookPhoto key={name} photo={photo} name={name} />
           );
         })}
       </div>
