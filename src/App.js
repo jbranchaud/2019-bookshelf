@@ -8,35 +8,35 @@ import rework from "./images/book-photos/rework.jpeg";
 
 const books = [
   {
-    name: "Behind the beautiful forevers",
+    title: "Behind the beautiful forevers",
     photo: behindTheBeautifulForevers,
     author: "Katherine Boo",
   },
   {
-    name: "Homegoing",
+    title: "Homegoing",
     photo: homegoing,
     author: "Yaa Gyasi",
   },
   {
-    name: "The City & the City",
+    title: "The City & the City",
     photo: theCityAndTheCity,
     author: "China Miéville"
   },
   {
-    name: "Rework",
+    title: "Rework",
     photo: rework,
     author: "David Heinemeier Hansson and Jason Fried",
   }
 ]
 
-function BookPhoto({ photo, name, author }) {
+function BookPhoto({ photo, title, author }) {
   return (
     <div className="book">
       <div className="book-photo">
-        <img src={photo} alt={name} />
+        <img src={photo} alt={title} />
       </div>
       <div className="book-info">
-        <p className="book-title">{name}</p>
+        <p className="book-title">{title}</p>
         <p className="book-author">{author}</p>
       </div>
     </div>
@@ -50,9 +50,9 @@ function App() {
         <p>Books - 2019</p>
       </header>
       <div className="books-container">
-        {books.map(({ name, photo, author }) => {
+        {books.map(({ title, photo, author }) => {
           return (
-            <BookPhoto key={name} photo={photo} name={name} author={author} />
+            <BookPhoto key={title} photo={photo} title={title} author={author} />
           );
         })}
       </div>
