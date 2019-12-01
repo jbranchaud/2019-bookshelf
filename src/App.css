@@ -7,6 +7,8 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: var(--secondary-color);
+  min-height: 100vh;
 }
 
 .App-header {
@@ -19,16 +21,22 @@ html {
 }
 
 .books-container {
+  margin-top: 1rem;
   max-width: 920px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .book {
+  background: white;
   margin-top: 1rem;
-  padding: 2%;
+  margin: 2%;
   flex-grow: 1;
-  flex-basis: 29%;
+  flex-basis: 46%;
+
+  border-radius: 10px;
+  box-shadow: -2px 2px 5px 0 var(--primary-color);
+  overflow: hidden;
 
   display: flex;
   flex-direction: column;
@@ -37,13 +45,16 @@ html {
 .book-photo img {
   flex: 1;
   width: 100%;
-  border-radius: 10px;
 
   transform: rotate(90deg);
 }
 
+.book-info {
+  margin: 0.5rem 1rem;
+}
+
 .book-info p {
-  margin: 0.75rem 0;
+  margin: 0.5rem 0;
 }
 
 .book-title {
@@ -56,17 +67,9 @@ html {
   font-size: 1rem;
 }
 
-@media (max-width: 768px) {
-  .book {
-    padding: 2%;
-    flex-grow: 1;
-    flex-basis: 46%;
-  }
-}
-
 @media (max-width: 480px) {
   .book {
-    padding: 2% 4%;
+    margin: 2% 4%;
     flex-grow: 1;
     flex-basis: 92%;
   }
