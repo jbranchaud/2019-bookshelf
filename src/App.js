@@ -31,15 +31,22 @@ const books = [
 
 function BookPhoto({ photo, title, author }) {
   return (
-    <div className="book">
-      <div className="book-photo">
-        <img src={photo} alt={title} />
+      <div className="scene">
+        <div className="card">
+          <div className="card-face book card-face-front">
+            <div className="book-photo">
+              <img src={photo} alt={title} />
+            </div>
+            <div className="book-info">
+              <p className="book-title">{title}</p>
+              <p className="book-author">{author}</p>
+            </div>
+          </div>
+          <div className="card-face book card-face-back">
+            <p>Here is the back</p>
+          </div>
+        </div>
       </div>
-      <div className="book-info">
-        <p className="book-title">{title}</p>
-        <p className="book-author">{author}</p>
-      </div>
-    </div>
   )
 }
 
