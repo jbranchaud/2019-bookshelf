@@ -13,7 +13,7 @@ html {
 
 .App-header {
   width: 100%;
-  background-color: #282c34;
+  background: linear-gradient(to right, var(--primary-color) 0%, rgba(41, 44, 52, 0.75) 100%);
   display: flex;
   justify-content: center;
   font-size: calc(10px + 2vmin);
