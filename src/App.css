@@ -92,7 +92,7 @@ html {
   transform: rotateY( 180deg );
 }
 
-.scene .card:hover {
+.scene .card.is-flipped {
   transform: rotateY(180deg);
 }
 

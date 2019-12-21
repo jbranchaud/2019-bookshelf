@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 
 import behindTheBeautifulForevers from "./images/book-photos/behind-the-beautiful-forevers.jpeg";
@@ -6,33 +6,54 @@ import homegoing from "./images/book-photos/homegoing.jpeg";
 import theCityAndTheCity from "./images/book-photos/the-city-and-the-city.jpeg";
 import rework from "./images/book-photos/rework.jpeg";
 
+const cx = (classnames) => {
+  return classnames.map(item => {
+    if(typeof item === "string") {
+      return item;
+    }
+    if(typeof item === "object") {
+      return Object.keys(item).map(key => {
+        return item[key] ? key : void 0;
+      }).join(" ");
+    }
+    return void 0;
+  }).join(" ")
+}
+
 const books = [
   {
     title: "Behind the beautiful forevers",
     photo: behindTheBeautifulForevers,
     author: "Katherine Boo",
+    genres: ["Biography", "Creative nonfiction"],
   },
   {
     title: "Homegoing",
     photo: homegoing,
     author: "Yaa Gyasi",
+    genres: ["Novel", "Historical Fiction"],
   },
   {
     title: "The City & the City",
     photo: theCityAndTheCity,
-    author: "China Miéville"
+    author: "China Miéville",
+    genres: ["Science Fiction", "Mystery", "Weird Fiction"],
   },
   {
     title: "Rework",
     photo: rework,
     author: "David Heinemeier Hansson and Jason Fried",
+    genres: ["Self-help"],
   }
 ]
 
 function BookPhoto({ photo, title, author }) {
+  const [facingFront, setFacingFront] = useState(true);
+  const toggleCardFace = () => setFacingFront(prev => !prev);
+
   return (
-      <div className="scene">
-        <div className="card">
+      <div className="scene" onClick={toggleCardFace}>
+        <div className={cx(["card", { "is-flipped": !facingFront }])}>
           <div className="card-face book card-face-front">
             <div className="book-photo">
               <img src={photo} alt={title} />
