@@ -6,7 +6,7 @@ import homegoing from "./images/book-photos/homegoing.jpeg";
 import theCityAndTheCity from "./images/book-photos/the-city-and-the-city.jpeg";
 import rework from "./images/book-photos/rework.jpeg";
 
-const cx = (classnames) => {
+const cx = (...classnames) => {
   return classnames.map(item => {
     if(typeof item === "string") {
       return item;
@@ -47,13 +47,13 @@ const books = [
   }
 ]
 
-function BookPhoto({ photo, title, author }) {
+function BookPhoto({ photo, title, author, genres = [] }) {
   const [facingFront, setFacingFront] = useState(true);
   const toggleCardFace = () => setFacingFront(prev => !prev);
 
   return (
     <div className="scene" onClick={toggleCardFace}>
-      <div className={cx(["card", { "is-flipped": !facingFront }])}>
+      <div className={cx("card", { "is-flipped": !facingFront })}>
         <div className="card-face book card-face-front">
           <div className="book-photo">
             <img src={photo} alt={title} />
@@ -64,7 +64,15 @@ function BookPhoto({ photo, title, author }) {
           </div>
         </div>
         <div className="card-face book card-face-back">
-          <p>Here is the back</p>
+          <div className="book-info">
+            <p className="book-title">{title}</p>
+            <p className="book-author">{author}</p>
+            <div className="genres">
+                {genres.map(genre => (
+                  <span key={genre} className="genre-pill">{genre}</span>
+                ))}
+                </div>
+          </div>
         </div>
       </div>
     </div>
@@ -78,9 +86,9 @@ function App() {
         <p>Books - 2019</p>
       </header>
       <div className="books-container">
-        {books.map(({ title, photo, author }) => {
+        {books.map(({ title, photo, author, genres }) => {
           return (
-            <BookPhoto key={title} photo={photo} title={title} author={author} />
+            <BookPhoto key={title} photo={photo} title={title} author={author} genres={genres} />
           );
         })}
       </div>

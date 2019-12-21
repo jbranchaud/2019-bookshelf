@@ -55,9 +55,37 @@ html {
   font-size: 1.5rem;
 }
 
+.card-face-back .book-title {
+  color: #fff;
+}
+
 .book-author {
   color: darkgray;
   font-size: 1rem;
+}
+
+.card-face-back .book-author {
+  color: lightgray;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.genre-pill {
+  border: solid 3px var(--secondary-color);
+  border-radius: 6px;
+  color: var(--secondary-color);
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 3px;
+  margin-top: 0.5rem;
+}
+
+.genre-pill:not(:last-child) {
+  margin-right: 0.5rem;
 }
 
 /* Card Flip Styles */
@@ -90,13 +118,15 @@ html {
 
 .card-face-back {
   transform: rotateY( 180deg );
+  color: #fff;
+  background: linear-gradient(to right, var(--primary-color) 0%, rgba(41, 44, 52, 0.85) 100%);
 }
 
 .scene .card.is-flipped {
   transform: rotateY(180deg);
 }
 
-@media (max-width: 480px) {
+@media (max-width: 460px) {
   .scene {
     margin: 2% 4%;
     flex-grow: 1;
