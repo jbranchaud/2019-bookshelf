@@ -52,22 +52,22 @@ function BookPhoto({ photo, title, author }) {
   const toggleCardFace = () => setFacingFront(prev => !prev);
 
   return (
-      <div className="scene" onClick={toggleCardFace}>
-        <div className={cx(["card", { "is-flipped": !facingFront }])}>
-          <div className="card-face book card-face-front">
-            <div className="book-photo">
-              <img src={photo} alt={title} />
-            </div>
-            <div className="book-info">
-              <p className="book-title">{title}</p>
-              <p className="book-author">{author}</p>
-            </div>
+    <div className="scene" onClick={toggleCardFace}>
+      <div className={cx(["card", { "is-flipped": !facingFront }])}>
+        <div className="card-face book card-face-front">
+          <div className="book-photo">
+            <img src={photo} alt={title} />
           </div>
-          <div className="card-face book card-face-back">
-            <p>Here is the back</p>
+          <div className="book-info">
+            <p className="book-title">{title}</p>
+            <p className="book-author">{author}</p>
           </div>
         </div>
+        <div className="card-face book card-face-back">
+          <p>Here is the back</p>
+        </div>
       </div>
+    </div>
   )
 }
 
