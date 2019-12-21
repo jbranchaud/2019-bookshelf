@@ -26,28 +26,36 @@ const books = [
     photo: behindTheBeautifulForevers,
     author: "Katherine Boo",
     genres: ["Biography", "Creative nonfiction"],
+    publicationDate: "February 7, 2012",
+    pageCount: 256,
   },
   {
     title: "Homegoing",
     photo: homegoing,
     author: "Yaa Gyasi",
     genres: ["Novel", "Historical Fiction"],
+    publicationDate: "June 7, 2016",
+    pageCount: 347,
   },
   {
     title: "The City & the City",
     photo: theCityAndTheCity,
     author: "China Miéville",
     genres: ["Science Fiction", "Mystery", "Weird Fiction"],
+    publicationDate: "April 29, 2009",
+    pageCount: 312,
   },
   {
     title: "Rework",
     photo: rework,
     author: "David Heinemeier Hansson and Jason Fried",
     genres: ["Self-help"],
+    publicationDate: "March 9, 2010",
+    pageCount: 279,
   }
 ]
 
-function BookPhoto({ photo, title, author, genres = [] }) {
+function BookPhoto({ photo, title, author, genres = [], publicationDate, pageCount }) {
   const [facingFront, setFacingFront] = useState(true);
   const toggleCardFace = () => setFacingFront(prev => !prev);
 
@@ -69,10 +77,12 @@ function BookPhoto({ photo, title, author, genres = [] }) {
             <p className="book-title">{title}</p>
             <p className="book-author">{author}</p>
             <div className="genres">
-                {genres.map(genre => (
-                  <span key={genre} className="genre-pill">{genre}</span>
-                ))}
-                </div>
+              {genres.map(genre => (
+                <span key={genre} className="genre-pill">{genre}</span>
+              ))}
+            </div>
+            <p>Published: {publicationDate}</p>
+            <p>Pages: {pageCount}</p>
           </div>
         </div>
       </div>
@@ -87,9 +97,9 @@ function App() {
         <p>Books - 2019</p>
       </header>
       <div className="books-container">
-        {books.map(({ title, photo, author, genres }) => {
+        {books.map(({ title, photo, author, genres, publicationDate, pageCount }) => {
           return (
-            <BookPhoto key={title} photo={photo} title={title} author={author} genres={genres} />
+            <BookPhoto key={title} photo={photo} title={title} author={author} genres={genres} publicationDate={publicationDate} pageCount={pageCount} />
           );
         })}
       </div>
