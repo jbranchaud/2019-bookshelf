@@ -64,6 +64,7 @@ function BookPhoto({ photo, title, author, genres = [] }) {
           </div>
         </div>
         <div className="card-face book card-face-back">
+          <img className="back-image" src={photo} alt={title} />
           <div className="book-info">
             <p className="book-title">{title}</p>
             <p className="book-author">{author}</p>

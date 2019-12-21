@@ -88,6 +88,18 @@ html {
   margin-right: 0.5rem;
 }
 
+img.back-image {
+  filter: saturate(0%);
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  opacity: 20%;
+  transform: rotate(-20deg);
+  top: 20%;
+  left: 10%;
+  z-index: -1;
+}
+
 /* Card Flip Styles */
 
 .scene {
