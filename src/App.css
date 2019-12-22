@@ -12,16 +12,20 @@ html {
 }
 
 .App-header {
+  position: fixed;
   width: 100%;
-  background: linear-gradient(to right, var(--primary-color) 0%, rgba(41, 44, 52, 0.75) 100%);
+  /* background: linear-gradient(to right, var(--primary-color) 0%, rgba(41, 44, 52, 0.75) 100%); */
+  background: linear-gradient(to right, #09d4ac 0%, #09d 100%);
   display: flex;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  height: 500px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 75%);
 }
 
 .books-container {
-  margin-top: 1rem;
+  margin-top: 25vh;
   max-width: 920px;
   display: flex;
   flex-wrap: wrap;
