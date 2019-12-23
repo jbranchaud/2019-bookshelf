@@ -1,13 +1,37 @@
+:root {
+  --int: 1.75;
+  --scale0: 1.1rem;
+  --scale-1: calc(var(--scale0) / var(--int));
+  --scale-2: calc(var(--scale-1) / var(--int));
+  --scale1: calc(var(--scale0) * var(--int));
+  --scale2: calc(var(--scale1) * var(--int));
+  --scale3: calc(var(--scale2) * var(--int));
+  --scale4: calc(var(--scale3) * var(--int));
+}
+
+h1 {
+  font-size: var(--scale3);
+}
+h2 {
+  font-size: var(--scale2);
+}
+h3 {
+  font-size: var(--scale1);
+}
+
 html {
   --primary-color: #292c34;
   --secondary-color: #09d4ac;
+  --subtle-gray: #d0d0d099;
+
+  font-size: var(--scale0);
 }
 
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #d0d0d099;
+  background: var(--subtle-gray);
   min-height: 100vh;
 }
 
@@ -25,10 +49,36 @@ html {
 .header-content {
   max-width: 920px;
   width: 100%;
+
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+
   color: white;
+  padding: 2rem;
+}
+
+.header-content-headline {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.header-content-tagline {
+  margin: 0;
+  margin-top: -0.75rem;
+}
+
+.header-description {
+  font-weight: 700;
+  margin: 0;
+}
+
+.header-content a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.header-content a:hover {
+  text-decoration: underline;
 }
 
 .books-container {
@@ -147,6 +197,23 @@ img.back-image {
 
 .scene .card.is-flipped {
   transform: rotateY(180deg);
+}
+
+@media (max-width: 540px) {
+  :root {
+    --int: 1.5;
+  }
+
+  .header-content-headline {
+    margin-bottom: 0.75rem;
+  }
+
+  .header-content-tagline {
+    margin-bottom: 0.75rem;
+  }
+
+  .header-description {
+  }
 }
 
 @media (max-width: 460px) {

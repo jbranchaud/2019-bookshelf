@@ -95,8 +95,9 @@ function App() {
     <div className="App">
       <header className="App-header">
         <div className="header-content">
-          <h1>Books</h1>
-          <h3>Read in 2019</h3>
+          <h1 className="header-content-headline">Bookshelf</h1>
+          <h3 className="header-content-tagline">2019 Edition</h3>
+          <p className="header-description">Hey, I'm <a href="https://joshbranchaud.com">Josh Branchaud</a>. Here is what I read over the course of 2019.</p>
         </div>
       </header>
       <div className="books-container">
