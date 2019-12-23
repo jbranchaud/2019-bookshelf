@@ -94,7 +94,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <p>Books - 2019</p>
+        <div className="header-content">
+          <h1>Books</h1>
+          <h3>Read in 2019</h3>
+        </div>
       </header>
       <div className="books-container">
         {books.map(({ title, photo, author, genres, publicationDate, pageCount }) => {
