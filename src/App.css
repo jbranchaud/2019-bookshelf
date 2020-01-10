@@ -188,6 +188,7 @@ img.back-image {
   position: relative;
   transition: transform 1s;
   transform-style: preserve-3d;
+  cursor: pointer;
 }
 
 .card-face {
