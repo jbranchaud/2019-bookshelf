@@ -127,6 +127,10 @@ html {
 .book-author {
   color: darkgray;
   font-size: 1rem;
+  /* use ellipsis for long author lists */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-face-back .book-author {
