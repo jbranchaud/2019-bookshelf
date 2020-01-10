@@ -116,6 +116,10 @@ html {
   font-size: 1.5rem;
 }
 
+.card-face-back .book-info {
+  margin-top: 0.5rem;
+}
+
 .card-face-back .book-title {
   color: #fff;
 }
