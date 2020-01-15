@@ -162,7 +162,7 @@ img.back-image {
   position: absolute;
   width: 500px;
   height: 500px;
-  opacity: 20%;
+  opacity: 0.2;
   transform: rotate(-20deg);
   top: 20%;
   left: 10%;
